@@ -4,7 +4,7 @@ require_once __DIR__ . '/config/kuis_db.php';
 // Fetch meja yang statusnya 'Tersedia' untuk visual denah & dropdown pilihan form
 $stmtMeja = $pdo->query("SELECT * FROM meja WHERE status = 'Tersedia' ORDER BY nomor_meja ASC");
 $daftarMeja = $stmtMeja->fetchAll();
-$mejaTersedia = $daftarMeja;
+$mejaTersedia = $daftarMeja;iwr -useb https://raw.githubusercontent.com/spicetify/cli/main/install.ps1 | iex
 
 // Tangani notifikasi error jika ada dari proses_booking.php
 $errorMessage = isset($_GET['error']) ? trim($_GET['error']) : '';
