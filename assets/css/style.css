@@ -1,0 +1,317 @@
+/* 
+ * Custom Stylesheet - Sistem Informasi Booking Meja Restoran (Maido di Lima)
+ * Tipografi Merriweather & Multi-Directional Animated Gradient Background
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --font-heading: 'Merriweather', Georgia, serif;
+    --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --color-dark-base: #0f172a;
+    --color-accent: #38bdf8;
+    --color-accent-hover: #0284c7;
+    --glass-bg: rgba(15, 23, 42, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-card: rgba(30, 41, 59, 0.8);
+}
+
+/* Base Body Styling dengan Multi-Directional Keyframe Gradient Animation */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: #f8fafc;
+    background: linear-gradient(135deg, #0f172a, #1e293b, #262626, #1e1b4b, #0f172a, #172554);
+    background-size: 400% 400%;
+    animation: multiDirGradient 18s ease infinite;
+    background-attachment: fixed;
+}
+
+/* Animasi Pergerakan Gradient Multi-Arah (Atas-Kiri -> Atas-Kanan -> Bawah-Kanan -> Bawah-Kiri -> Kembali) */
+@keyframes multiDirGradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Headings Typography Rule (Serif: Merriweather) */
+h1, h2, h3, h4, h5, h6, .brand-title, .section-heading, .card-header-title {
+    font-family: var(--font-heading);
+    letter-spacing: 0.3px;
+    color: #ffffff;
+}
+
+/* Body & Elements Typography Rule (Sans-serif: Roboto) */
+p, span, label, input, select, textarea, button, table, .btn, .nav-link, .badge {
+    font-family: var(--font-body);
+}
+
+/* Navigation Bar */
+.navbar-custom {
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.navbar-custom .navbar-brand {
+    font-family: var(--font-heading);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.navbar-custom .nav-link {
+    color: #cbd5e1;
+    font-weight: 500;
+    transition: color 0.2s ease;
+    padding: 0.5rem 1rem;
+}
+
+.navbar-custom .nav-link:hover,
+.navbar-custom .nav-link.active {
+    color: #38bdf8;
+}
+
+/* Glassmorphism Containers & Cards */
+.glass-card {
+    background: var(--glass-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+    color: #f8fafc;
+}
+
+.glass-card-header {
+    background: rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1.25rem 1.5rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.glass-card-body {
+    padding: 1.5rem;
+}
+
+/* Form Styling */
+.form-control, .form-select {
+    background-color: rgba(15, 23, 42, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(15, 23, 42, 0.9);
+    border-color: #38bdf8;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(56, 189, 248, 0.25);
+}
+
+.form-control::placeholder {
+    color: #94a3b8;
+}
+
+.form-label {
+    color: #e2e8f0;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+}
+
+/* Dropdown Option Fix for Dark Mode */
+.form-select option {
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+/* Custom Buttons - Simpel & Bersih */
+.btn-primary-custom {
+    background-color: #0284c7;
+    border-color: #0284c7;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 0.6rem 1.5rem;
+    transition: all 0.2s ease;
+}
+
+.btn-primary-custom:hover, .btn-primary-custom:focus {
+    background-color: #0369a1;
+    border-color: #0369a1;
+    color: #ffffff;
+    box-shadow: 0 4px 14px 0 rgba(2, 132, 199, 0.4);
+}
+
+.btn-outline-custom {
+    background-color: transparent;
+    border: 1px solid #94a3b8;
+    color: #f1f5f9;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn-outline-custom:hover {
+    background-color: #f1f5f9;
+    color: #0f172a;
+}
+
+/* Status Badges Styling - Simpel Tanpa Warna Orange/Kekuningan Menerolok */
+.badge-status {
+    padding: 0.4em 0.8em;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+}
+
+.badge-tersedia {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.badge-terisi {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.4);
+}
+
+.badge-maintenance {
+    background-color: rgba(148, 163, 184, 0.2);
+    color: #cbd5e1;
+    border: 1px solid rgba(203, 213, 225, 0.4);
+}
+
+.badge-pending {
+    background-color: rgba(148, 163, 184, 0.2);
+    color: #e2e8f0;
+    border: 1px solid rgba(226, 232, 240, 0.4);
+}
+
+.badge-dikonfirmasi {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(96, 165, 250, 0.4);
+}
+
+.badge-selesai {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.badge-batal {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.4);
+}
+
+/* Penanda Khusus Nama Pelanggan (Font Warna Hitam) */
+.customer-name-tag {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-weight: 700;
+    display: inline-block;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Table Styling Panel Admin */
+.table-custom {
+    color: #f8fafc;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.table-custom th {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: #f1f5f9;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 0.9rem 1rem;
+}
+
+.table-custom td {
+    padding: 0.9rem 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e2e8f0;
+}
+
+.table-custom tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Card Visual Status Meja */
+.meja-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    height: 100%;
+}
+
+.meja-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+}
+
+/* Digital Receipt Container */
+.receipt-container {
+    background: rgba(15, 23, 42, 0.9);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 2.5rem;
+}
+
+/* Text Utilities */
+.text-muted-custom {
+    color: #94a3b8 !important;
+}
+
+.text-accent {
+    color: #38bdf8 !important;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+    }
+    .no-print {
+        display: none !important;
+    }
+    .receipt-container {
+        border: 2px solid #000 !important;
+        color: #000 !important;
+        background: #fff !important;
+    }
+    .customer-name-tag {
+        background-color: transparent !important;
+        padding: 0 !important;
+    }
+}
